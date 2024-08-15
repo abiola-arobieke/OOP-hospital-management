@@ -1,11 +1,16 @@
 require_relative './person.rb'
 
 class Staff < Person
-  attr_reader :name, :address, :gender
+  attr_reader :name, :address, :gender, :department
 
   def initialize(name, address, gender, date_joined)
     @date_joined = date_joined
     super(name, address, gender)
+  end
+
+  def department=(department)
+    @department = department
+    department.staff.push(self) unless department.staff.include?(self)
   end
 end
 
