@@ -1,0 +1,8 @@
+require_relative './staff'
+
+
+class Technologist < Technical
+  def initialize(name, address, gender='m')
+    super(name, address, gender)
+  end
+end
