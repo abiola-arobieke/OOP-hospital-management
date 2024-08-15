@@ -1,8 +1,10 @@
 require_relative './person.rb'
 
 class Patient < Person
+  attr_reader :appointment
+
   def initialize(name, address, gender="m")
-    # @accepted_date = accpeted_date
     super(name, address, gender)
+    @appointment = []
   end
 end
