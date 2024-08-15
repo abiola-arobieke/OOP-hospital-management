@@ -6,6 +6,8 @@ require_relative './medical_record'
 require_relative './patient'
 
 doc1 = Doctor.new('Adewale Johnson', 'Ayegun, Oleyo Rd')
+doc2 = Doctor.new('Mercy Abreu', 'Yanga, Edo Rd')
+
 tech = Techincian.new('Alabi Brown', 'Orita Challengee')
 
 patient1 = Patient.new('Seun Ajaro', 'Idera, lagos')
@@ -17,6 +19,11 @@ saint_mary = Hospital.new('Saint Mary Hospital', 'Ago-Iwoye, Ogun State', 903728
 n_and_d = Department.new('Nutrition and Dietetics', 'Pa James Building', 'N&D')
 records = Department.new('Medical Records', 'Prof Olorunda center', 'Records')
 
+n_and_d.add_staff(doc1)
+n_and_d.add_staff(doc2)
+
+p doc1.department
+
 
 saint_mary.add_department(n_and_d)
 saint_mary.add_department(records)
@@ -25,6 +32,8 @@ seun_medical  = MedicalRecord.new(patient1, saint_mary)
 victor_medical = MedicalRecord.new(patient2, saint_mary)
 
 doc1_medical = MedicalRecord.new(doc1, saint_mary)
+
+
 
 doc1.medical.each do |pers|
   p pers.person.medical
