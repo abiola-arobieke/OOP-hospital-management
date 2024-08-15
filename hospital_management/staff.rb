@@ -30,7 +30,10 @@ end
 
 
 class Operational < Staff
+  attr_reader :appointment
+  
   def initialize(name, address, gender='m', date_joined)
     super(name, address, gender, date_joined)
+    @appointment = []
   end
 end
