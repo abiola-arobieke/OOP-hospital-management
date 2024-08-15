@@ -8,9 +8,18 @@ class Department
     @staff = []
   end
 
-  def add_staff(worker)
-    staff.push(worker)
-    worker.department = self
+  def add_staff(employee)
+    staff.push(employee)
+    employee.department = self
+  end
+
+  def remove_staff(employee)
+    staff.each do |worker|
+      if worker == employee
+        worker_index = staff.find_index(employee)
+        staff.delete_at(worker_index)
+      end
+    end
   end
 
   def hospital=(hospital)
