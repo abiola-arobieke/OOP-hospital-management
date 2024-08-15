@@ -22,7 +22,9 @@ records = Department.new('Medical Records', 'Prof Olorunda center', 'Records')
 n_and_d.add_staff(doc1)
 n_and_d.add_staff(doc2)
 
-p doc1.department
+n_and_d.remove_staff(doc1)
+
+p n_and_d.staff.length
 
 
 saint_mary.add_department(n_and_d)
