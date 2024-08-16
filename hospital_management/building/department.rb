@@ -1,9 +1,8 @@
 class Department
-  attr_reader :name, :building, :staff
+  attr_reader :name, :name_abbr, :building, :staff
 
-  def initialize(name, location, name_abbr)
+  def initialize(name, name_abbr)
     @name = name
-    @location = location
     @name_abbr = name_abbr
     @staff = []
   end
