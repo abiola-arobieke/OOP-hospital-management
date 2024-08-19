@@ -3,10 +3,12 @@ require_relative './staff/medical/doctor'
 require_relative './staff/technical/technician'
 require_relative './building/building'
 require_relative './building/department'
+require_relative './building/room'
 require_relative './records/medical_record'
 require_relative './records/appointment'
 require_relative './records/prescription'
 require_relative './patient'
+require_relative './records/patient_history'
 
 
 saint_mary = Hospital.new('Saint Mary Hospital', 'Ago-Iwoye, Ogun State', 9037282632)
@@ -44,6 +46,22 @@ victor_medical = MedicalRecord.new(patient2, saint_mary)
 patient1.book_appointment(doc1, "2024-09-18")
 
 medicine = Prescription.new(patient1, doc1, "2024-08-09", 'paracetamol', 'antibiotics')
+
+health_note1 = PatientHistory.new("healthy", "2024-09-02", 'drip', 'injection', 'analgesic')
+health_note2 = PatientHistory.new("healthy", "2024-09-02", 'drip', 'injection', 'analgesic')
+
+p health_note1.adminsted_drugs
+
+patient1.add_to_history(health_note1)
+patient1.add_to_history(health_note2)
+
+room1 = Room.new('Office 1', 'Doctor Asaolu')
+
+nd.add_room(room1)
+
+p room1.department
+
+# p patient1.history
 
 # # p doc1.prescriptions
 # p patient1.prescriptions
