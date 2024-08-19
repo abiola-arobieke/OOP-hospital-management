@@ -2,16 +2,22 @@ require_relative './person.rb'
 require_relative './records/appointment'
 
 class Patient < Person
-  attr_reader :appointments, :prescriptions
+  attr_reader :appointments, :prescriptions, :history
 
   def initialize(name, address, gender="m")
     super(name, address, gender)
     @appointments = []
     @prescriptions = []
+    @history = []
   end
 
-  def patient_details()
+  def details()
     return self
+  end
+
+  def add_to_history(health_note)
+    history.append(health_note)
+    health_note.patient = self
   end
 
   def make_payment()
