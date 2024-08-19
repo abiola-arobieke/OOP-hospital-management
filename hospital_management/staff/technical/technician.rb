@@ -5,3 +5,4 @@ class Techincian < Technical
     super(name, address, gender)
   end
 end
+
