@@ -24,9 +24,3 @@ class Diagnostic < Room
     super(name, description)
   end
 end
-
-class Ward < Room
-  def initialize(name, description)
-    super(name, description)
-  end
-end
