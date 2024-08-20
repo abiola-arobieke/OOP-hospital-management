@@ -1,17 +1,20 @@
-require_relative './techincal'
+require_relative '../staff'
 
-class Pharmarcist < Techincian
+class Pharmarcist < Technical
   attr_reader :name, :drugs
 
-  def initialize(name, address, gender='m')
-    super(name, address, gender)
+  def initialize(name, address, gender='m', date_joined)
+    super(name, address, gender, date_joined)
     @name = name
     @address = address
     @gender = gender
     @drugs = []
   end
 
-  def add_drugs(drug)
-    
+  def add_drug(drug)
+    @drugs.push(drug)
+    drug.pharmarcist = self
   end
 end
+
+Technical
