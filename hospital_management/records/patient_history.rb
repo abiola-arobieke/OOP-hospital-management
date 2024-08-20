@@ -1,10 +1,16 @@
 class PatientHistory
-  attr_reader :patient, :health_note, :adminsted_drugs
+  attr_reader :patient, :health_note, :administered_drugs
 
-  def initialize(status, date, *adminsted_drugs)
-    @status = status
+  def initialize(date, status, patient, adminsted_drugs)
     @date = date
-    @adminsted_drugs = adminsted_drugs
+    @status = status
+
+    @patient = patient
+    patient.history << self
+
+    @administered_drugs = adminsted_drugs
+    adminsted_drugs.history.push(self)
+
   end
 
   def patient=(patient)
