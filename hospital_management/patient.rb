@@ -2,7 +2,7 @@ require_relative './person.rb'
 require_relative './records/appointment'
 
 class Patient < Person
-  attr_reader :appointments, :prescriptions, :history
+  attr_reader :appointments, :prescriptions, :history, :ward
 
   def initialize(name, address, gender="m")
     super(name, address, gender)
@@ -13,6 +13,11 @@ class Patient < Person
 
   def details()
     return self
+  end
+
+  def ward=(ward)
+    @ward = ward
+    ward.patients.push(ward) unless ward.patients.include?(ward)
   end
 
   def add_to_history(health_note)
