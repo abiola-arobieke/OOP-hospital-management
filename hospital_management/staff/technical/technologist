@@ -1,4 +1,4 @@
-require_relative './staff'
+require_relative '../staff'
 
 
 class Technologist < Technical
