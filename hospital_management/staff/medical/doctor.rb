@@ -25,8 +25,16 @@ class Doctor < Operational
 
   end
 
-  def prescribe_drug()
+  def add_diagnosis(patient, diagnosis)
+    
+  end
 
+  def prescribe_drug(patient, prescription)
+
+  end
+
+  def schedule_medical()
+    # dggg
   end
 
   def receieve_notice()
