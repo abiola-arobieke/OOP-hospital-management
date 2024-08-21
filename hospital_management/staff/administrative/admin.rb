@@ -6,7 +6,7 @@ class Administrative < Staff
   end
 
   def delete_staff()
-
+    
   end
 
   def edit_salary()
