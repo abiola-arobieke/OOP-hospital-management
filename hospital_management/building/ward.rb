@@ -21,4 +21,8 @@ class Ward < Room
       end
     end
   end
+
+  def is_occupied?
+    true if patients.length > 10
+  end
 end
