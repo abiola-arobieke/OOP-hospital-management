@@ -22,14 +22,12 @@ class Technical < Staff
 end
 
 
-
-
-
 class Operational < Staff
-  attr_reader :appointment
+  attr_reader :appointment, :visit
 
   def initialize(name, address, gender='m', date_joined)
     super(name, address, gender, date_joined)
     @appointment = []
+    @visit = []
   end
 end
