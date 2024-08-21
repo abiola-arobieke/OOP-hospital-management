@@ -1,20 +1,16 @@
+require 'date'
+
 class PatientHistory
   attr_reader :patient, :health_note, :administered_drugs
 
-  def initialize(date, status, patient, adminsted_drugs)
-    @date = date
+  def initialize(status, patient, doc_or_nurse, drug_giving, date)
     @status = status
-
+    
     @patient = patient
-    patient.history << self
-
-    @administered_drugs = adminsted_drugs
-    adminsted_drugs.history.push(self)
-
-  end
-
-  def patient=(patient)
-    @patient = patient
-    patient.history.push(self) unless patient.history.include?(self)
+    patient.health_record << self
+    
+    @drug_giving = drug_giving
+    
+    @date = date
   end
 end
