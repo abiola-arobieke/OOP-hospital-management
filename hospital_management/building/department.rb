@@ -1,11 +1,12 @@
 class Department
-  attr_reader :name, :name_abbr, :building, :staff, :rooms
+  attr_reader :name, :name_abbr, :building, :staff, :rooms, :bills
 
   def initialize(name, name_abbr)
     @name = name
     @name_abbr = name_abbr
     @staff = []
     @rooms = []
+    @bills = []
   end
 
   def add_staff(employee)
