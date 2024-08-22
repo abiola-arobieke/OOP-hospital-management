@@ -16,6 +16,9 @@ require_relative './pharmacy/drug'
 require_relative './visit'
 require_relative './diagnosis/diagnosis_type'
 require_relative './diagnosis/diagnosis'
+require_relative './staff/administrative/cashier'
+
+
 
 saint_mary = Hospital.new('Saint Mary Hospital', 'Ago-Iwoye, Ogun State', 9037282632)
 
@@ -37,6 +40,8 @@ doc3 = Doctor.new('Faith Olowo', 'Isake Eko, Gbagada', 'Dentist', "2024-09-02")
 
 nurse1 = Nurse.new('Faith Olowo', 'Isake Eko, Gbagada', 'Maid', "2024-09-02")
 
+cashier1 = Cashier.new("Mary Olowo", "Iyana ipaja ,Lagos", "m", "1999-03-02")
+
 tech = Technician.new('Alabi Brown', 'Orita Challengee')
 
 nd.add_staff(doc1)
@@ -45,6 +50,8 @@ nd.add_staff(doc3)
 
 patient1 = Patient.new('Seun Ajaro', 'Idera, lagos')
 patient2 = Patient.new('Victor Banjo', 'Surulere, lagos')
+
+
 
 ward1.add_patient(patient1)
 
@@ -61,6 +68,21 @@ room1 = Room.new('Office 1', 'Doctor Asaolu')
 
 nd.add_room(room1)
 
+
+cashier1.create_bill(12639, patient1, nd, 2300)
+
+patient1.pay_bill(12639, 230)
+
+# p patient1.bills
+
+# p cashier1.created_bills
+# p patient1.bills
+# p nd.bills
+
+patient1.bills.each do |bill|
+  p bill.status
+end
+
 pharm1 = Pharmarcist.new('David White', 'Ologuner, Ibadan', '2024-09-02', 'm')
 
 antibiotics = Drug.new(2324, 'Orelox', 600, '500mg tetracyline', 'Injection')
@@ -71,7 +93,7 @@ pharm1.add_drug(pain_reliever)
 
 nurse1.administer_drug('hospitalized', patient1, antibiotics, 500, '2024-07-03')
 
-p patient1.health_record
+# p patient1.health_record
 
 visit1 = Visit.new(patient1, doc1)
 
