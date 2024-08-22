@@ -2,7 +2,7 @@ require_relative './person.rb'
 require_relative './records/appointment'
 
 class Patient < Person
-  attr_reader :appointments, :prescriptions, :ward, :diagnosis, :visit, :administered, :health_record, :status
+  attr_reader :appointments, :prescriptions, :ward, :diagnosis, :visit, :administered, :health_record, :status, :bills
 
   def initialize(name, address, gender="m", status="away")
     super(name, address, gender)
@@ -12,11 +12,23 @@ class Patient < Person
     @diagnosis = []
     @visit = []
     @administered = []
+    @bills = []
     @status = status
   end
 
   def details()
     return self
+  end
+
+  def pay_bill(id, amount)
+    bills.each do |bill|
+      if bill.id == id && bill.status == 'not paid' && bill.amount < amount
+        bill.paid = amount
+        bill.status = 'paid'
+      else
+          puts "Error in payment!"
+      end
+    end
   end
 
   def status=(status)
