@@ -17,6 +17,8 @@ require_relative './visit'
 require_relative './diagnosis/diagnosis_type'
 require_relative './diagnosis/diagnosis'
 require_relative './staff/administrative/cashier'
+require_relative './staff/administrative/receptionist'
+
 
 
 
@@ -42,6 +44,10 @@ nurse1 = Nurse.new('Faith Olowo', 'Isake Eko, Gbagada', 'Maid', "2024-09-02")
 
 cashier1 = Cashier.new("Mary Olowo", "Iyana ipaja ,Lagos", "m", "1999-03-02")
 
+rep1 = Receptionist.new("David Umahi", "Iyana ipaja ,Lagos", "m", "1999-03-02")
+
+
+
 tech = Technician.new('Alabi Brown', 'Orita Challengee')
 
 nd.add_staff(doc1)
@@ -51,6 +57,11 @@ nd.add_staff(doc3)
 patient1 = Patient.new('Seun Ajaro', 'Idera, lagos')
 patient2 = Patient.new('Victor Banjo', 'Surulere, lagos')
 
+rep1.register_patient('Juliet Sandra', 'Ketu , lagos')
+
+rep1.schedule_appointment(patient1, doc1, "2024-08-02")
+
+p doc1.appointments
 
 
 ward1.add_patient(patient1)
@@ -71,7 +82,7 @@ nd.add_room(room1)
 
 cashier1.create_bill(12639, patient1, nd, 2300)
 
-patient1.pay_bill(12639, 230)
+patient1.pay_bill(12639, 2500)
 
 # p patient1.bills
 
