@@ -1,6 +1,7 @@
 require_relative '../staff'
 require_relative '../../pharmacy/administer_drug'
 require_relative '../../records/patient_history'
+require_relative '../../records/appointment'
 # require 'date'
 
 class Nurse < Operational
@@ -16,14 +17,9 @@ class Nurse < Operational
     else
       puts "Insufficient dosage"
     end
-    
   end
 
-  def give_medicine()
-
-  end
-
-  def check_vitals()
-    
+  def schedule_appointment(patient, doc_or_nurse, date)
+    Appointment.new(patient, doc_or_nurse, date)
   end
 end
