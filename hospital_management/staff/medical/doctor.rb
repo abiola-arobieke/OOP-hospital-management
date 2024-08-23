@@ -12,6 +12,10 @@ class Doctor < Operational
     @appointments = []
     @prescriptions = []
   end
+
+  def schedule_appointment(patient, doc_or_nurse, date)
+    Appointment.new(patient, doc_or_nurse, date)
+  end
   
   def get_salary()
 
@@ -31,10 +35,6 @@ class Doctor < Operational
 
   def prescribe_drug(patient, prescription)
 
-  end
-
-  def schedule_medical()
-    # dggg
   end
 
   def receieve_notice()
