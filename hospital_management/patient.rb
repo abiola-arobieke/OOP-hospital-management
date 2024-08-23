@@ -48,14 +48,10 @@ class Patient < Person
     Appointment.new(self, doc_or_nurse, date)
   end
 
-  def add_to_history(health_note)
-    history.append(health_note)
-    health_note.patient = self
-  end
-
-  def make_payment()
-
-  end
+  # def add_to_history(health_note)
+  #   history.append(health_note)
+  #   health_note.patient = self
+  # end
 
   def receieve_report()
 
