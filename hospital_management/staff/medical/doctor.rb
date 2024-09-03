@@ -1,4 +1,6 @@
 require_relative '../staff.rb'
+# require_relative '../diagnosis/diagnosis.rb'
+# require_relative '../../records/prescription.rb'
 
 class Doctor < Operational
   attr_reader :appointments, :prescriptions
@@ -16,40 +18,16 @@ class Doctor < Operational
   def schedule_appointment(patient, doc_or_nurse, date)
     Appointment.new(patient, doc_or_nurse, date)
   end
-  
-  def get_salary()
-
-  end
-
-  def get_hospital_details()
-
-  end
 
   def check_patient()
 
   end
 
   def add_diagnosis(patient, diagnosis)
-    
+    Diagnosis.new(patient, diagnosis)
   end
 
   def prescribe_drug(patient, prescription)
-
-  end
-
-  def receieve_notice()
-
-  end
-
-  def view_roster
-    
-  end
-
-  def assign_to_patient()
-
-  end
-    
-  def perform_surgery()
 
   end
 end
