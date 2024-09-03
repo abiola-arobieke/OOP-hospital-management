@@ -2,7 +2,6 @@ require_relative '../staff'
 require_relative '../../pharmacy/administer_drug'
 require_relative '../../records/patient_history'
 require_relative '../../records/appointment'
-# require 'date'
 
 class Nurse < Operational
   def initialize(name, address, ward_assigned,  shift, gender='f')
