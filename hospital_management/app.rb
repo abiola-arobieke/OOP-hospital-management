@@ -61,7 +61,9 @@ rep1.register_patient('Juliet Sandra', 'Ketu , lagos')
 
 rep1.schedule_appointment(patient1, doc1, "2024-08-02")
 
-p doc1.appointments
+
+
+# p doc1.appointments
 
 
 ward1.add_patient(patient1)
@@ -72,6 +74,8 @@ victor_medical = MedicalRecord.new(patient2, saint_mary)
 # doc1_medical = MedicalRecord.new(doc1, saint_mary)
 
 patient1.book_appointment(doc1, "2024-09-18")
+
+# p patient1.appointments
 
 medicine = Prescription.new(patient1, doc1, "2024-08-09", 'paracetamol', 'antibiotics')
 
@@ -90,9 +94,9 @@ patient1.pay_bill(12639, 2500)
 # p patient1.bills
 # p nd.bills
 
-patient1.bills.each do |bill|
-  p bill.status
-end
+# patient1.bills.each do |bill|
+#   p bill.status
+# end
 
 pharm1 = Pharmarcist.new('David White', 'Ologuner, Ibadan', '2024-09-02', 'm')
 
@@ -111,3 +115,7 @@ visit1 = Visit.new(patient1, doc1)
 gall_stone = DiagnosisType.new("2387", 'kidney disease')
 
 diagnose1 = Diagnosis.new(patient1, gall_stone)
+
+doc1.add_diagnosis(patient1, gall_stone)
+
+p diagnose1.patient
