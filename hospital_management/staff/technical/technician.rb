@@ -1,7 +1,6 @@
-require_relative './staff'
+require_relative '../staff'
 
-
-class Techincian < Technical
+class Technician < Technical
   def initialize(name, address, gender='m')
     super(name, address, gender)
   end

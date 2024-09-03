@@ -1,18 +1,17 @@
 class Hospital
   attr_reader :name, :address, :phone, :medical
-  attr_accessor :department
-  
+  attr_accessor :buildings
+
   def initialize(name, address, phone)
     @name = name
     @address = address
     @phone = phone
-    @department = []
+    @buildings = []
     @medical = []
   end
 
-  def add_department(department)
-    @department.push(department)
-    department.hospital = self
+  def add_building(building)
+    @buildings.push(building)
+    building.hospital = self
   end
-
 end
